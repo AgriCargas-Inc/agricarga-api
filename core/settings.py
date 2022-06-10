@@ -31,6 +31,9 @@ os.environ.get("DEBUG", False)
 ALLOWED_HOSTS = [os.environ["ORIGIN_HOST"]]
 
 
+AUTH_USER_MODEL = "users.User"
+LOGIN_URL = "/"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -41,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "ninja_jwt",
+    "apps.users"
 ]
 
 MIDDLEWARE = [
