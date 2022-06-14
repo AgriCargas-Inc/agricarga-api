@@ -1,5 +1,5 @@
 from django.contrib import admin
-from apps.core import models
+from apps.users import models
 from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 
@@ -7,7 +7,6 @@ admin.site.site_header = "Admin Panel"
 admin.site.site_title = "Admin Panel"
 admin.site.index_title = "Welcome Admin"
 admin.site.unregister(Group)
-admin.site.register(models.Address)
 
 
 @admin.action(description="Inactivate selected Users")
