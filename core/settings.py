@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "ninja_jwt",
-    "apps.users"
+    "apps.users",
+    "whitenoise.runserver_nostatic",
 ]
 
 MIDDLEWARE = [
