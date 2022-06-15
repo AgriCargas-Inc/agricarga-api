@@ -1,5 +1,6 @@
 import uuid
 from django.db import models
+from apps.users import managers
 from django.contrib.auth.models import AbstractUser
 
 
@@ -25,6 +26,7 @@ class User(AbstractUser):
     updated_at = models.DateTimeField(auto_now=True)
     username = None
 
+    objects = managers.UserManager()
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
