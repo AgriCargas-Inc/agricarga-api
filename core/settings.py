@@ -92,8 +92,6 @@ DATABASES = {
         )
 }
 
-# Manual override
-DATABASES['default']['ENGINE'] = 'django.contrib.gis.db.backends.postgis'
 
 
 # Password validation
