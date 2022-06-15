@@ -28,7 +28,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = [os.environ["ORIGIN_HOST"]]
+ALLOWED_HOSTS = ['*']
 
 
 AUTH_USER_MODEL = "users.User"
