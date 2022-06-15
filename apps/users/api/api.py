@@ -1,6 +1,7 @@
 from ninja import NinjaAPI
 from typing import List
 from ninja.responses import codes_4xx
+from apps.users.auth.auth import AuthBearer, AuthSchema, authenticate
 from apps.users.models import User
 from apps.users.schema import schemas as custom_schemas
 
@@ -10,6 +11,18 @@ api = NinjaAPI()
 @api.get("/")
 def home(request):
     return "welcome"
+
+@api.post("/login", auth=None)
+def sign_in(request, auth: AuthSchema):
+    token = authenticate(
+        request=request, phone=auth.phone, password=auth.password
+    )
+    return {"token": token}
+
+@api.get("/bearer", auth=AuthBearer())
+def bearer(request):
+    print(request.auth)
+    return {"token": request.auth}
 
 @api.get("/user", response=List[custom_schemas.UserSchemaInp])
 def list_user(request):
