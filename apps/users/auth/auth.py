@@ -36,10 +36,10 @@ class AuthBearer(HttpBearer):
             return None
 
 
-def authenticate(request, username, password):
+def authenticate(request, phone, password):
     try:
         user = authenticate_user_django(
-            request=request, username=username, password=password
+            request=request, phone=phone, password=password
         )
         data = {
             "data": {
