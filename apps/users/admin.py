@@ -29,7 +29,7 @@ class UserAdmin(BaseUserAdmin):
         "is_superuser",
         "is_active",
     ]
-    search_fields = ["email", "first_name", "last_name"]
+    search_fields = ["email", "name"]
     list_filter = ["is_active", "is_staff", "is_superuser"]
     fieldsets = [
         ("Account", {"fields": ("email", "password")}),
