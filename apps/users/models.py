@@ -14,7 +14,7 @@ class User(AbstractUser):
     id = models.UUIDField(
         primary_key=True, default=uuid.uuid4, editable=False, unique=True
     )
-    user_type = models.CharField("Tipo de Usuário",max_length=8,choices=TYPE_USER, blank=False, null=False)
+    user_type = models.CharField("Tipo de Usuário",max_length=20,choices=TYPE_USER, blank=False, null=False)
     email = models.EmailField(unique=True, blank=False, null=False)
     phone = models.CharField(max_length=15, blank=True, null=True, default=None)
     name = models.CharField(max_length=100, blank=False, null=False)
